@@ -17,10 +17,22 @@
         @csrf
         @method('patch')
 
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
+        <div class="mt-4">
+            <x-input-label for="firstname" :value="__('First Name')" />
+            <x-text-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus autocomplete="firstname" />
+            <x-input-error :messages="$errors->get('firstname')" class="mt-2" />
+        </div>
+
+        <div class="mt-4">
+            <x-input-label for="middlename" :value="__('Middle Name')" />
+            <x-text-input id="middlename" class="block mt-1 w-full" type="text" name="middlename" :value="old('middlename')" required autofocus autocomplete="middlename" />
+            <x-input-error :messages="$errors->get('middlename')" class="mt-2" />
+        </div>
+
+        <div class="mt-4">
+            <x-input-label for="lastname" :value="__('Last Name')" />
+            <x-text-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus autocomplete="lastname" />
+            <x-input-error :messages="$errors->get('lastname')" class="mt-2" />
         </div>
 
         <div>
